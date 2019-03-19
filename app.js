@@ -1,9 +1,9 @@
 var createError = require('http-errors');
 var express = require('express');
+var mysql = require('mysql');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
 var indexRouter = require('./routes/router');
 var usersRouter = require('./routes/users');
 
@@ -37,5 +37,4 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
 module.exports = app;
