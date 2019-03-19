@@ -1,13 +1,9 @@
 var express = require('express');
-var router = express.Router();
-router.get('/test',function(req,res,next){
-   res.send(
-          'Hello'
-    
-    
-    );
-});
 
+var router = express.Router();
+router.get('/test', function(req, res, next) {
+  res.rend('Hello');
+});
 /* ----------------------------------GET -Login page.--------------- */
 router.get('/login', function(req, res, next) {
   res.render('Pages/Login/Login');

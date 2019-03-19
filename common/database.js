@@ -19,5 +19,5 @@ function getConnection() {
 }
 
 module.exports = {
-  getConnection: getConnection
+  db: getConnection
 };
