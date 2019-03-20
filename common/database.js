@@ -1,23 +1,19 @@
-var config = require("config");
-var mysql = require("mysql");
+const Sequelize = require("sequelize");
+const db = {};
+const sequelize = new Sequelize("dulich", "root", "12345", {
+  host: "localhost",
+  dialect: "mysql",
+  operatorsAliases: false,
 
-var connection = mysql.createConnection({
-  host: config.get("mysql.host"),
-  user: config.get("mysql.user"),
-  password: config.get("mysql.password"),
-  database: config.get("mysql.database"),
-  port: config.get("mysql.port")
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  }
 });
 
-connection.connect();
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
 
-function getConnection() {
-  if (!connection) {
-    connection.connect();
-  }
-  return connection;
-}
-
-module.exports = {
-  db: getConnection
-};
+module.exports = db;

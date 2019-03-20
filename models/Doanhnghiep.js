@@ -2,52 +2,55 @@ const Sequelize = require("sequelize");
 const db = require("../database/db");
 
 module.exports = db.sequelize.define(
-  "taikhoan",
+  "doanhnghiep",
   {
-    tk_id: {
+    dn_id: {
       type: Sequelize.BIGINT,
       primaryKey: true,
       autoIncrement: true
     },
-    nd_id: {
+    tk_id: {
       type: Sequelize.BIGINT,
 
       references: {
         // This is a reference to another model
-        model: ttnguoidung,
+        model: taikhoan,
 
         // This is the column name of the referenced model
-        key: "nd_id"
+        key: "tk_id"
       }
     },
-    dn_id: {
-      type: Sequelize.BIGINT,
-
-      references: {
-        // This is a reference to another model
-        model: doanhnghiep,
-
-        // This is the column name of the referenced model
-        key: "dn_id"
-      }
-    },
-    tk_username: {
+    dn_ten: {
       type: Sequelize.STRING
     },
-    tk_password: {
+    dn_hinhanh: {
       type: Sequelize.STRING
     },
-    tk_email: {
+    dn_mota: {
       type: Sequelize.STRING
     },
-    tk_phone: {
+    dn_diachi: {
       type: Sequelize.STRING
     },
-    tk_ngaydangki: {
-      type: Sequelize.DATE,
-      defaultValue: Sequelize.NOW
+    dn_tinh: {
+      type: Sequelize.STRING
     },
-    tk_loaitk: {
+    dn_thanhpho: {
+      type: Sequelize.STRING
+    },
+    dn_xaphuong: {
+      type: Sequelize.STRING
+    },
+    dn_giamdoc: {
+      type: Sequelize.STRING
+    },
+    dn_nganhang: {
+      type: Sequelize.STRING
+    },
+    dn_masothue: {
+      type: Sequelize.STRING
+    },
+    dn_website: {
       type: Sequelize.STRING
     }
   },

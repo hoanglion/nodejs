@@ -2,52 +2,49 @@ const Sequelize = require("sequelize");
 const db = require("../database/db");
 
 module.exports = db.sequelize.define(
-  "taikhoan",
+  "ttnguoidung",
   {
-    tk_id: {
+    nd_id: {
       type: Sequelize.BIGINT,
       primaryKey: true,
       autoIncrement: true
     },
-    nd_id: {
+    tk_id: {
       type: Sequelize.BIGINT,
 
       references: {
         // This is a reference to another model
-        model: ttnguoidung,
+        model: taikhoan,
 
         // This is the column name of the referenced model
-        key: "nd_id"
+        key: "tk_id"
       }
     },
-    dn_id: {
-      type: Sequelize.BIGINT,
-
-      references: {
-        // This is a reference to another model
-        model: doanhnghiep,
-
-        // This is the column name of the referenced model
-        key: "dn_id"
-      }
-    },
-    tk_username: {
+    nd_ho: {
       type: Sequelize.STRING
     },
-    tk_password: {
+    nd_ten: {
       type: Sequelize.STRING
     },
-    tk_email: {
+    nd_gioitinh: {
+      type: Sequelize.BOOLEAN
+    },
+    nd_diachi: {
       type: Sequelize.STRING
     },
-    tk_phone: {
+    nd_sothich: {
       type: Sequelize.STRING
     },
-    tk_ngaydangki: {
-      type: Sequelize.DATE,
-      defaultValue: Sequelize.NOW
+    nd_ngaysinh: {
+      type: Sequelize.DATEONLY
     },
-    tk_loaitk: {
+    nd_tinh: {
+      type: Sequelize.STRING
+    },
+    nd_thanhpho: {
+      type: Sequelize.STRING
+    },
+    nd_quoctich: {
       type: Sequelize.STRING
     }
   },
