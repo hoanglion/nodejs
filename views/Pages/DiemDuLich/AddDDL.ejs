@@ -1,0 +1,138 @@
+<% include ../../include/Header %>
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Thêm điểm du lịch mới
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a>
+    </li>
+    <li><a href="#">Điểm du lịch</a></li>
+    <li class="active">Thêm điểm du lịch mới</li>
+  </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <!-- left column -->
+    <div class="col-md-6">
+      <!-- general form elements -->
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Điền thông tin</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form role="form" method="POST" action="/diemdulich-add">
+          <div class="box-body">
+            <div class="form-group">
+              <label for="DL_TEN">Tên</label>
+              <input
+                type="text"
+                class="form-control"
+                id="DL_TEN"
+                placeholder="Tên"
+              />
+            </div>
+            <div class="form-group">
+              <label for="DL_VITRI">Vị Trí</label>
+              <input
+                type="text"
+                class="form-control"
+                id="DL_VITRI"
+                placeholder="Vị trí"
+              />
+            </div>
+            <div class="form-group">
+                <label for="DL_DIEMDANHGIA">Điểm đánh giá</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="DL_DIEMDANHGIA"
+                  placeholder="Điểm đánh giá"
+                />
+              </div>
+              <div class="form-group">
+                  <label for="DL_HINHANH">Hình ảnh</label>
+                  <input type="file" id="DL_HINHANH" />
+                </div>
+              <div class="form-group">
+                  <label for="DL_MOTA">Mô tả</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="DL_MOTA"
+                    placeholder="Mô tả"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="DL_GIAVE">Giá Vé</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="DL_GIAVE"
+                    placeholder="Giá vé"
+                  />
+                </div>
+                <div class="form-group">
+                    <label for="DL_LOAIHINHDULICH">Loại hình du lịch</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="DL_LOAIHINHDULICH"
+                      placeholder="Loại hình du lịch"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="DL_DICHVU">Dịch vụ</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="DL_DICHVU"
+                      placeholder="Dịch vụ"
+                    />
+                  </div>
+                  <div class="form-group">
+                      <label for="DL_GIOMOCUA">Giờ mở cửa</label>
+                      <input
+                        type="time"
+                        class="form-control"
+                        id="DL_GIOMOCUA"
+                        placeholder="VD: 7:30"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="DL_GIODONGCUA">Giờ đóng cửa</label>
+                      <input
+                        type="time"
+                        class="form-control"
+                        id="DL_GIODONGCUA"
+                        placeholder="Giờ đóng cửa"
+                      />
+                    </div>
+                    <div class="form-group">
+                        <label for="DL_TOADOGOOGLE">Tọa độ google</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="DL_TOADOGOOGLE"
+                          placeholder="Tọa độ"
+                        />
+                      </div>
+          </div>
+          <!-- /.box-body -->
+          <div class="box-footer">
+            <input type="submit" name="" value="Thêm" class="btn btn-primary"/>
+        </form>
+      </div>
+      <!-- /.box -->
+    </div>
+    <!--/.col (right) -->
+  </div>
+  <!-- /.row -->
+</section>
+<!-- /.content -->
+<!-- /.content-wrapper -->
+<% include ../../include/Footer %>

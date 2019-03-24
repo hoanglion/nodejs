@@ -1,0 +1,75 @@
+<% include ../../include/Header %>
+<section class="content">
+  <div class="col-md-12">
+    <div class="nav-tabs-custom">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a href="#activity" data-toggle="tab">Danh sách điểm du lịch</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th style="width: 10px">ID</th>
+              <th>Tên</th>
+              <th>Vị Trí</th>
+              <th>Điểm Đánh Giá</th>
+              <th>Hình Ảnh</th>
+              <th>Mô Tả</th>
+              <th>Giá Vé</th>
+              <th>Loại Hình Du Lịch</th>
+              <th>Dịch Vụ</th>
+              <th>Giờ mở cửa</th>
+              <th>Giờ đóng cửa</th>
+              <th>Tọa Độ Google</th>
+              <th style="width: 100px">
+                <button class="btn btn-success btn-xs">Thêm mới</button>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (data && data.ddls) { %> <% for(var i = 0; i <
+            data.ddls.length; i++) {%>
+            <tr>
+              <td><%= data.ddls[i].DL_ID %></td>
+              <td><%= data.ddls[i].DL_TEN %></td>
+              <td><%= data.ddls[i].DL_VITRI %></td>
+              <td><%= data.ddls[i].DL_DIEMDANHGIA %></td>
+              <td><%= data.ddls[i].DL_HINHANH %></td>
+              <td><%= data.ddls[i].DL_MOTA %></td>
+              <td><%= data.ddls[i].DL_GIAVE %></td>
+              <td><%= data.ddls[i].DL_LOAIHINHDULICH %></td>
+              <td><%= data.ddls[i].DL_DICHVU %></td>
+              <td><%= data.ddls[i].DL_GIOMOCUA %></td>
+              <td><%= data.ddls[i].DL_GIODONGCUA %></td>
+              <td><%= data.ddls[i].DL_TOADOGOOGLE %></td>
+              <td>
+                <button class="btn btn-warning btn-xs" title="Sao chép">
+                  <i class="fa fa-clipboard"></i>
+                </button>
+                <a
+                  href="/diemdulich-edit/<%= data.ddls[i].DL_ID %>"
+                  class="btn btn-success btn-xs"
+                  ><i class="fa fa-pencil-square"></i
+                ></a>
+                <button
+                  class="btn btn-danger btn-xs ddls_delete"
+                  dl_id="<%= data.ddls[i].DL_ID %>"
+                  title="Xóa"
+                >
+                  <i class="fa fa-trash-o"></i>
+                </button>
+              </td>
+            </tr>
+            <%}%> <%}%>
+          </tbody>
+        </table>
+      </div>
+      <!-- /.tab-content -->
+    </div>
+    <!-- /.nav-tabs-custom -->
+  </div>
+  <!-- /.col -->
+</section>
+<% include ../../include/Footer %>

@@ -1,27 +1,27 @@
-var express = require('express');
+var express = require("express");
 
 var router = express.Router();
-router.get('/test', function(req, res, next) {
-  res.rend('Hello');
+router.get("/test", function(req, res, next) {
+  res.rend("Hello");
 });
 /* ----------------------------------GET -Login page.--------------- */
-router.get('/login', function(req, res, next) {
-  res.render('Pages/Login/Login');
+router.get("/login", function(req, res, next) {
+  res.render("Pages/Login/Login");
 });
 /* ------------------------------------GET Home page. ----------------------------*/
-router.get('/', function(req, res, next) {
-  res.render('Pages/Home/Home');
+router.get("/", function(req, res, next) {
+  res.render("Pages/Home/Home");
 });
 /* -------------------------------GET Area page. -----------------------*/
-router.get('/area', function(req, res, next) {
-  res.render('Pages/Area/Area');
+router.get("/area", function(req, res, next) {
+  res.render("Pages/Area/Area");
 });
 /*----------------------------- GET Category page.----------------------------------- */
-router.get('/category', function(req, res, next) {
-  res.render('Pages/Category/Category');
+router.get("/category", function(req, res, next) {
+  res.render("Pages/Category/Category");
 });
 /* -----------------------------GET Profile page.------------------------------ */
-router.get('/profile', function(req, res, next) {
-  res.render('Pages/Profile/Profile');
+router.get("/profile", function(req, res, next) {
+  res.render("Pages/Profile/Profile");
 });
 module.exports = router;

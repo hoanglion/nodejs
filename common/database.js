@@ -1,19 +1,25 @@
-const Sequelize = require("sequelize");
-const db = {};
-const sequelize = new Sequelize("dulich", "root", "12345", {
-  host: "localhost",
-  dialect: "mysql",
-  operatorsAliases: false,
+var config = require("config");
+var mysql = require("mysql");
 
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000
+var connString =
+  "mysql://root:12345@localhost/dulich?charset=utf8_general_ci&timezone=-0700";
+
+var connection = mysql.createConnection(connString);
+
+// var connection = mysql.createConnection({
+//     host        : config.get("mysql.host"),
+//     user        : config.get("mysql.user"),
+//     password    : config.get("mysql.password"),
+//     database    : config.get("mysql.database"),
+// });
+
+function getConnection() {
+  if (!connection) {
+    connection.connect();
   }
-});
+  return connection;
+}
 
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
-
-module.exports = db;
+module.exports = {
+  getConnection: getConnection
+};
